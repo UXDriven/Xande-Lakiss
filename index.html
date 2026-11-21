@@ -1,11 +1,126 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Teste de deploy da UXDriven com GitHub e Vercel.">
-<title>UXDriven | Deploy de teste</title>
-<style>*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#071a1b;color:#f8f8ff;font-family:Inter,system-ui,sans-serif;padding:24px}main{max-width:740px;padding:clamp(32px,7vw,72px);border:1px solid #ffffff25;border-radius:28px;background:linear-gradient(140deg,#123e40,#0c151b);box-shadow:0 24px 80px #0007}.brand{font-size:17px;font-weight:800;letter-spacing:.13em;color:#65e7d2}h1{font-size:clamp(38px,7vw,70px);letter-spacing:-.055em;line-height:1.08;margin:35px 0 20px}h1 span{color:#65e7d2}p{color:#c8c7d4;font-size:18px;line-height:1.7}.status{display:inline-block;margin-top:22px;padding:12px 18px;border-radius:30px;background:#45d9a51b;color:#8bf0c9;border:1px solid #45d9a555;font-size:14px;font-weight:700}footer{margin-top:56px;color:#9c9aa9;font-size:13px}</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101112" />
+  <meta name="description" content="Xande Lakiss Athletic Performance. Treine com propósito. Desenvolva velocidade, potência e mobilidade com intenção." />
+  <title>Xande Lakiss — Athletic Performance | Forward Motion</title>
+  <link rel="icon" type="image/png" href="./assets/symbol.png" />
+  <link rel="preload" as="image" href="./assets/hero-athlete.webp" />
+  <link rel="preload" as="font" type="font/woff" href="./assets/display.woff" crossorigin />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./app.js" defer></script>
 </head>
-<body><main><div class="brand">UXDRIVEN</div><h1>UXDriven <span>deploy automático ativo.</span></h1><p>Segunda versão de teste: esta atualização foi enviada diretamente pelo ChatGPT ao GitHub para validar a publicação automática na Vercel.</p><div class="status">● VERSÃO 2 · TESTE DE AUTODEPLOY</div><footer>UXDriven · GitHub → Vercel · Teste de atualização automática</footer></main></body>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="loading-screen" aria-hidden="true">
+    <span class="loading-mark">X<span class="loading-accent">/</span>L</span>
+    <div class="loading-track"><div class="loading-fill"></div></div>
+    <span class="loading-caption">PREPARANDO MOVIMENTO</span>
+  </div>
+  <div class="scroll-track" aria-hidden="true"><div class="scroll-fill" id="scrollProgress"></div></div>
+  <div class="pointer-orbit" id="pointerOrbit" aria-hidden="true"></div>
+
+  <header class="site-header" id="header">
+    <a class="brand" href="#inicio" aria-label="Xande Lakiss — início"><img src="./assets/logo-horizontal.png" alt="Xande Lakiss Athletic Performance" /></a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#filosofia">A FILOSOFIA</a>
+      <a href="#metodo">O MÉTODO</a>
+      <a href="#jornada">A JORNADA</a>
+    </nav>
+    <div class="header-actions">
+      <button class="motion-control" id="motionToggle" type="button" aria-label="Pausar animações" aria-pressed="false" title="Pausar animações"><span class="motion-bars"><i></i><i></i><i></i></span></button>
+      <a class="header-cta" href="#contato">COMEÇAR</a>
+      <button class="mobile-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileMenu" aria-label="Menu mobile" inert>
+    <span class="mobile-menu-kicker">NAVEGAÇÃO / XL</span>
+    <a href="#filosofia">A FILOSOFIA</a><a href="#metodo">O MÉTODO</a><a href="#jornada">A JORNADA</a><a href="#contato">COMEÇAR</a>
+    <span class="mobile-menu-bottom">TRAIN WITH PURPOSE. PERFORM WITH INTENT.</span>
+  </nav>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-photo" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-marks" aria-hidden="true"><span class="hero-mark-one"></span><span class="hero-mark-two"></span></div>
+      <div class="hero-inner">
+        <p class="eyebrow hero-eyebrow"><span class="pulse-dot"></span> ATHLETIC PERFORMANCE <span class="slash">/</span> FORWARD MOTION</p>
+        <h1 id="hero-title" class="display hero-title"><span class="reveal-line"><span>SEU LIMITE</span></span><span class="reveal-line"><span>NÃO É</span></span><span class="reveal-line purple"><span>O FIM.</span></span></h1>
+        <p class="hero-description">Performance não acontece por acaso. Ela se constrói com movimento, controle e propósito.</p>
+        <div class="hero-actions"><a class="btn btn-purple magnetic" href="#metodo"><span>EXPLORAR O MÉTODO</span><span class="btn-icon" aria-hidden="true">↗</span></a><a class="text-link" href="#filosofia"><span class="play-symbol" aria-hidden="true">▶</span> ENTENDA A FILOSOFIA</a></div>
+      </div>
+      <div class="hero-bottom"><span>SCROLL TO MOVE <span class="scroll-glyph" aria-hidden="true">↓</span></span><span class="hero-index">XL <span class="slash">/</span> MOVEMENT SYSTEM</span><span class="coordinates">08.01 / HUMAN PERFORMANCE</span></div>
+      <div class="hero-arc" aria-hidden="true">X</div>
+    </section>
+
+    <div class="ticker" aria-label="Treine com propósito. Performar com intenção.">
+      <div class="ticker-track" aria-hidden="true" id="tickerTrack"><span>TRAIN WITH PURPOSE <b>✳</b> PERFORM WITH INTENT <b>✳</b></span><span>TRAIN WITH PURPOSE <b>✳</b> PERFORM WITH INTENT <b>✳</b></span><span>TRAIN WITH PURPOSE <b>✳</b> PERFORM WITH INTENT <b>✳</b></span></div>
+    </div>
+
+    <section class="philosophy section-pad" id="filosofia" aria-labelledby="philosophy-heading">
+      <div class="section-top reveal"><span class="eyebrow dark-eye"><span class="small-square"></span> 01 / A FILOSOFIA</span><span class="section-meta">MOVE WITH INTENTION</span></div>
+      <div class="philosophy-layout">
+        <div class="philosophy-copy">
+          <h2 id="philosophy-heading" class="display ink-title reveal">POTÊNCIA<br />SEM <em>CONTROLE</em><br />É SÓ BARULHO.</h2>
+          <div class="philosophy-statement reveal"><span class="statement-rule"></span><p>Não é sobre fazer mais movimentos. É sobre fazer cada movimento ter sentido.</p></div>
+          <div class="philosophy-bottom reveal"><span class="mini-code">PRECISÃO / INTENSIDADE / PROGRESSÃO</span><a class="round-link" href="#metodo" aria-label="Conhecer os pilares do método"><span aria-hidden="true">↘</span></a></div>
+        </div>
+        <figure class="athlete-image reveal-right"><img src="./assets/training-athlete.webp" alt="Atleta realizando treino de força com trenó em ambiente de treinamento" loading="lazy"/><figcaption><span>POWER / CONTROL</span><span>IMAGE STUDY 01</span></figcaption><div class="image-reticle" aria-hidden="true"></div></figure>
+      </div>
+    </section>
+
+    <section class="method section-pad" id="metodo" aria-labelledby="method-heading">
+      <div class="method-background" aria-hidden="true">03</div>
+      <div class="section-top reveal"><span class="eyebrow"><span class="small-square"></span> 02 / O MÉTODO</span><span class="section-meta">PERFORMANCE IS A PROCESS</span></div>
+      <div class="method-heading-row"><h2 id="method-heading" class="display reveal">TRÊS FRENTES.<br /><span>UMA EVOLUÇÃO.</span></h2><p class="method-intro reveal">Cada capacidade faz parte de um sistema. Explore as frentes de desenvolvimento que orientam uma performance mais completa.</p></div>
+      <div class="method-interaction">
+        <div class="method-tabs" role="tablist" aria-label="Dimensões do treinamento">
+          <button role="tab" id="tab-speed" aria-selected="true" aria-controls="panel-method" data-mode="speed"><span class="tab-id">01</span><span>SPEED</span><span class="tab-plus" aria-hidden="true">+</span></button>
+          <button role="tab" id="tab-power" aria-selected="false" tabindex="-1" aria-controls="panel-method" data-mode="power"><span class="tab-id">02</span><span>POWER</span><span class="tab-plus" aria-hidden="true">+</span></button>
+          <button role="tab" id="tab-mobility" aria-selected="false" tabindex="-1" aria-controls="panel-method" data-mode="mobility"><span class="tab-id">03</span><span>MOBILITY</span><span class="tab-plus" aria-hidden="true">+</span></button>
+        </div>
+        <div class="method-panel" id="panel-method" role="tabpanel" aria-labelledby="tab-speed" tabindex="0">
+          <div class="panel-grid" aria-hidden="true"></div><div class="panel-orbit" aria-hidden="true"><span class="orbit-a"></span><span class="orbit-b"></span><span class="orbit-core">XL</span></div>
+          <div class="panel-top"><span id="panelIndex">01 / PERFORMANCE DIMENSION</span><span class="panel-status"><span class="pulse-dot"></span> EM FOCO</span></div>
+          <div class="panel-main"><p class="panel-label" id="panelLabel">VELOCIDADE</p><h3 class="display" id="panelTitle">SPEED<span class="panel-dot">.</span></h3><p id="panelDescription">Trabalhar aceleração, resposta e eficiência de movimento. Qualidade de execução em cada saída.</p></div>
+          <div class="panel-footer"><span id="panelKeywords">ACELERAÇÃO / RESPOSTA / RITMO</span><span>XL / AP</span></div>
+        </div>
+      </div>
+      <p class="method-notice">* Representação conceitual das frentes de treinamento. Não exibe indicadores reais de atletas.</p>
+    </section>
+
+    <section class="process" id="jornada" aria-labelledby="process-heading">
+      <div class="process-header section-pad"><div class="section-top reveal"><span class="eyebrow dark-eye"><span class="small-square"></span> 03 / A JORNADA</span><span class="section-meta">DA INTENÇÃO À EVOLUÇÃO</span></div><h2 class="display reveal" id="process-heading">PROGRESSO NÃO É<br /><em>ACIDENTE.</em></h2><p class="process-lead reveal">É construção. Uma sequência de decisões que dá direção ao esforço.</p></div>
+      <div class="process-lines">
+        <article class="process-step" data-step="1"><span class="process-num">01</span><div class="process-copy"><span class="process-caption">O PONTO DE PARTIDA</span><h3 class="display">ENTENDER.</h3><p>Conhecer o ponto de partida, o objetivo e as demandas de cada movimento.</p></div><span class="process-indicator" aria-hidden="true">↗</span></article>
+        <article class="process-step" data-step="2"><span class="process-num">02</span><div class="process-copy"><span class="process-caption">A CONSTRUÇÃO</span><h3 class="display">DESENVOLVER.</h3><p>Organizar o trabalho com intenção, consistência e atenção à execução.</p></div><span class="process-indicator" aria-hidden="true">↗</span></article>
+        <article class="process-step" data-step="3"><span class="process-num">03</span><div class="process-copy"><span class="process-caption">O PRÓXIMO NÍVEL</span><h3 class="display">EVOLUIR.</h3><p>Reavaliar, ajustar o caminho e continuar avançando com consciência.</p></div><span class="process-indicator" aria-hidden="true">↗</span></article>
+      </div>
+    </section>
+
+    <section class="statement-block" aria-label="Manifesto Forward Motion"><div class="statement-x" aria-hidden="true">X</div><span class="eyebrow">FORWARD MOTION / XANDE LAKISS</span><p class="display statement-big reveal">O CORPO SE MOVE.<br /><strong>A MENTE DIRECIONA.</strong></p><div class="statement-bottom"><span>PRECISÃO. MOVIMENTO. INTENSIDADE.</span><img src="./assets/symbol.png" alt="" loading="lazy" /></div></section>
+
+    <section class="contact section-pad" id="contato" aria-labelledby="contact-heading">
+      <div class="section-top reveal"><span class="eyebrow"><span class="small-square"></span> 04 / PRÓXIMO PASSO</span><span class="section-meta">YOUR MOVE STARTS HERE</span></div>
+      <div class="contact-layout"><div class="contact-copy reveal"><h2 id="contact-heading" class="display">CHEGOU<br />A SUA<br /><span>VEZ.</span></h2><p>O próximo passo começa com uma intenção clara. Conte qual capacidade você quer desenvolver.</p><div class="contact-decor" aria-hidden="true"><span>XL</span><span>PERFORMANCE SYSTEM</span></div></div>
+        <form class="intent-form reveal" id="intentForm" novalidate>
+          <p class="form-kicker">INÍCIO / 001</p><h3>QUAL É O SEU FOCO?</h3><div class="goal-grid" role="radiogroup" aria-label="Seu foco de treinamento">
+            <label><input type="radio" name="goal" value="Velocidade" checked /><span>SPEED <small>VELOCIDADE</small></span></label>
+            <label><input type="radio" name="goal" value="Potência" /><span>POWER <small>POTÊNCIA</small></span></label>
+            <label><input type="radio" name="goal" value="Mobilidade" /><span>MOBILITY <small>MOBILIDADE</small></span></label>
+          </div>
+          <label class="field-label" for="intentName">COMO PODEMOS TE CHAMAR?</label><input id="intentName" type="text" name="name" autocomplete="given-name" placeholder="Seu nome" maxlength="70" required />
+          <label class="field-label" for="intentDetail">O QUE VOCÊ BUSCA?</label><textarea id="intentDetail" name="detail" rows="3" maxlength="320" placeholder="Conte brevemente o seu objetivo (opcional)"></textarea>
+          <button class="btn btn-purple btn-full magnetic" type="submit"><span>PREPARAR MINHA MENSAGEM</span><span class="btn-icon" aria-hidden="true">↗</span></button>
+          <p class="form-note" id="formNote" aria-live="polite">Ao continuar, preparamos uma mensagem para você compartilhar com a equipe. Nenhum dado é enviado automaticamente.</p>
+          <div class="message-ready" id="messageReady" hidden><p>Mensagem preparada. Copie ou compartilhe no seu canal de contato com a equipe.</p><div class="share-actions"><button type="button" id="copyMessage">COPIAR MENSAGEM</button><button type="button" id="shareMessage">COMPARTILHAR</button></div></div>
+        </form></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="footer-main"><img src="./assets/logo-vertical.png" alt="Xande Lakiss Athletic Performance" loading="lazy" /><div><span>KEEP MOVING.</span><span class="footer-dimension">PERFORMANCE<br />WITH PURPOSE.</span></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> XANDE LAKISS</span><span>ATHLETIC PERFORMANCE / FORWARD MOTION</span><a href="#inicio">VOLTAR AO TOPO ↑</a></div></footer>
+</body>
 </html>
