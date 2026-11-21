@@ -185,7 +185,7 @@
     else updateScroll();
   });
 
-  // Intent builder only: no user data is transmitted without a configured destination.
+  // A mensagem é preparada localmente. O envio ao WhatsApp acontece apenas após clique explícito.
   const form = document.getElementById('intentForm');
   const formNote = document.getElementById('formNote');
   const readyMessage = document.getElementById('messageReady');
@@ -199,6 +199,8 @@
     const detail = String(data.get('detail') || '').trim().slice(0, 320);
     if (!name) { form.querySelector('#intentName').focus(); return; }
     preparedMessage = `Olá, equipe Xande Lakiss! Meu nome é ${name} e quero conhecer melhor o trabalho de performance. Meu foco é ${goal.toLowerCase()}.${detail ? ` Meu objetivo: ${detail}` : ''} Gostaria de saber os próximos passos.`;
+    const whatsappSend = document.getElementById('whatsappSend');
+    if (whatsappSend) whatsappSend.href = `https://wa.me/558184412845?text=${encodeURIComponent(preparedMessage)}`;
     readyMessage.hidden = false;
     if (formNote) formNote.textContent = 'Mensagem pronta. Você decide quando e para quem compartilhar; nenhum dado foi enviado.';
     readyMessage.scrollIntoView({ behavior: prefersReduced.matches ? 'auto' : 'smooth', block: 'nearest' });
